@@ -1,7 +1,7 @@
-NAME = MoooarBraiinnnz
+NAME = HiThisIsBrain
 CC = g++ -o -g
 CFLAGZ = -Wall -Wextra -Werror -std=c++98
-SRCS = 	main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = 	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -12,7 +12,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC)	$(CFLAGZ)	-o	$(NAME)	$(OBJS) 
-
 
 clean:
 	rm -f $(OBJS) 
