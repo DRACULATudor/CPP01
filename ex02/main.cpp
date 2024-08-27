@@ -8,6 +8,6 @@ int main()
         Zombie *horde = zombieHorde(5, names[i]);
         delete[] horde;
     }
-    
+
     return(0);
 }
