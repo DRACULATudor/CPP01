@@ -20,23 +20,29 @@ Harl::~Harl()
 
 void Harl::debug()
 {
-    std::cout << BLUE << "DEBUG [LEVEL REACHED]: I am allways extra happy when I don't have pineaple on my pizza, wow so much peperoni. I LOVE IT!" << RESET
+    std::cout << BLUE << "[DEBUG]" << std::endl
+              << "I am allways extra happy when I don't have pineaple on my pizza, wow so much peperoni.\nI LOVE IT!"
               << std::endl;
 }
 
 void Harl::info()
 {
-    std::cout << GREEN << "INFO [LEVEL REACHED]: I am really loving this pizza, but why does every single bite have a tropical taste? Something feels wrong....." << RESET << std::endl;
+    std::cout << GREEN << "[INFO]" << std::endl
+              << "I am really loving this pizza, but why does every single bite have a tropical taste?\nSomething feels wrong....." << std::endl;
 }
 
 void Harl::warning()
 {
-    std::cout << YELLOW << "WARNING [LEVEL REACHED]: HOW IS THIS POSSIBLE !? Why am I seeing yellow fruity pieces on my pizza !!! WHAT IS THAT !!????........" << RESET << std::endl;
+    std::cout << YELLOW << "[WARNING]" << std::endl
+              << "HOW IS THIS POSSIBLE !?\nWhy am I seeing yellow fruity pieces on my pizza !!!\nWHAT IS THAT !!????........"
+              << std::endl;
 }
 
 void Harl::error()
 {
-    std::cout << RED << "ERROR [LEVEL REACHED]: THIS IS PINEAPLE !!! COMPLETELY UNACCEPTABLE !!! MY LAWYERS WILL CONTACT YOU, HOW COULD YOU ???!!!" << RESET << std::endl;
+    std::cout << RED << "[ERROR]" << std::endl
+              << "THIS IS PINEAPLE !!!\nCOMPLETELY UNACCEPTABLE !!!\nMY LAWYERS WILL CONTACT YOU, HOW COULD YOU ???!!!\n"
+              << std::endl;
 }
 
 void Harl::complain(std::string level)
