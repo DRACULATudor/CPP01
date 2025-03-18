@@ -3,7 +3,7 @@
 ## Overview
 This project is part of the **C++ Modules** at **42 School**, focusing on object-oriented programming concepts such as memory allocation, references, and more. The goal is to strengthen understanding of **C++ fundamentals** while following the **42 coding standards**.
 
-Topics Covered
+## Topics Covered
 
     Pointers and References
     Memory Allocation (new / delete)
