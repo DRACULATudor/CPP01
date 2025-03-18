@@ -1,11 +1,11 @@
-NAME = NecessaryViolence
+NAME = UnnecessaryViolence
 CC = g++ -o -g
 CFLAGZ = -Wall -Wextra -Werror -std=c++98 -Iinclude
 SRCS = 	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGZ) -g -c $< -o $@
 
 all: $(NAME)

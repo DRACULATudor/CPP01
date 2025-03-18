@@ -17,5 +17,4 @@ public:
 
 Zombie *zombieHorde(int N, std::string name);
 
-
 #endif

@@ -1,11 +1,11 @@
-NAME = harlfilter
+NAME = HarlFilter
 CC = g++ -o -g
 CFLAGZ = -Wall -Wextra -Werror -std=c++98 -Iinclude
 SRCS = 	main.cpp Harl.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGZ) -g -c $< -o $@
 
 all: $(NAME)

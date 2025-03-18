@@ -1,61 +1,69 @@
 #include "sed.hpp"
 
-void replace(std::string file, std::string toreplace, std::string replacemnt)
+void replaceme(std::string file, std::string toreplace, std::string replacemnt)
 {
-    std::ifstream filename(file); //instream for converint to (input)file contents
+    std::ifstream filename(file.c_str()); //instream for converint to (input)file contents
     if (!filename)
     {
         std::cout << "Error oppening file\n";
         return;
     }
-
     std::ostringstream buff; //used for reading entier line into buffer so than I can 
     buff << filename.rdbuf();   // convert the contents into string 
     std::string buffer = buff.str();
     filename.close();
 
-    int pos_char;
-    while ((pos_char = buffer.find(toreplace, pos_char)) != std::string::npos) //npos = if condition fails(if nothing to replace found)
+    if (buffer.empty())
     {
-        buffer.replace(pos_char, toreplace.length(), replacemnt);
-        pos_char += replacemnt.length();
+        std::cerr << "Error empty file" << std::endl;
+        return;
     }
-    std::ofstream outfile(file + ".replacement"); // converting to (output)file contents
+    if (toreplace.empty())
+    {
+        std::cerr << "String to be replaced can't be empty !" << std::endl;
+        return;
+    }
+
+    std::string result;    
+    size_t pos_char = 0;
+    size_t found;
+    
+    while ((found = buffer.find(toreplace, pos_char)) != std::string::npos) //npos = if condition fails(if nothing to replace found)
+    {
+        result.append(buffer, pos_char, found - pos_char);// append part before the match
+        result.append(replacemnt); //append the replacement
+        pos_char = found + toreplace.length();
+    }
+    result.append(buffer, pos_char, buffer.length() - pos_char); //append rest of string
+    std::ofstream outfile((file + ".replacement").c_str()); // converting to (output)file contents
     if (!outfile)
     {
         std::cout << "Error getting contents of file" << std::endl;
         return;
     }
-    
-    outfile << buffer;
+    outfile << result;
     outfile.close();
 }
 
 int main(int argc, char *argv[])
 {
     if (argc != 4)
-        std::cout << "Invalid number of arguments !" << std::endl;
+    {
+        std::cerr << "Invalid number of arguments!" << std::endl;
+        return 1;
+    }
+    if (argv[1] != NULL && argv[2] != NULL && argv[3] != NULL)
+    {
+        std::string filename = argv[1];
+        std::string toreplace = argv[2];
+        std::string replacement = argv[3];
+        // std::cout << "Replacing '" << toreplace << "' with '" << replacement << "' in file '" << filename << "'" << std::endl;
+        replaceme(filename, toreplace, replacement);
+        return 0;
+    }
     else
     {
-        if (argv[1] != NULL)
-        {
-            std::string filenam = argv[1];
-            if (argv[2] != NULL && argv[3] != NULL)
-            {
-                std::string toreplace = argv[2];
-                std::string replacement = argv[3];
-                replace(filenam, toreplace, replacement);
-                return (0);
-            }
-            else
-            {
-                std::cout << "Neither of the strings is allowed to be null !" << std::endl;
-                return(0);
-            }
-        }
-        else
-            std::cout << "Invalid number of arguments !" << std::endl;
-        
+        std::cerr << "Neither of the strings is allowed to be null! || Invalid number of arguments!" << std::endl;
+        return 1;
     }
-    return (0);
 }

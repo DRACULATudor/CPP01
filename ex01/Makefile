@@ -1,11 +1,11 @@
-NAME = MoooarBraiinnnz
+NAME = MoarBrainz
 CC = g++ -o -g
 CFLAGZ = -Wall -Wextra -Werror -std=c++98
 SRCS = 	main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGZ) -g -c $< -o $@
 
 all: $(NAME)

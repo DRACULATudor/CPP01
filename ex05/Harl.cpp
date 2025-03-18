@@ -41,7 +41,7 @@ void Harl::warning()
 void Harl::error()
 {
     std::cout << RED << "[ERROR]" << std::endl
-              << "THIS IS PINEAPLE !!!\nCOMPLETELY UNACCEPTABLE !!!\nMY LAWYERS WILL CONTACT YOU, HOW COULD YOU ???!!!\n"
+              << "THIS IS PINEAPLE !!!\nCOMPLETELY UNACCEPTABLE !!!\nMY LAWYERS WILL CONTACT YOU, HOW COULD YOU ???\n"
               << std::endl;
 }
 
