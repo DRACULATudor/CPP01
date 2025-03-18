@@ -19,20 +19,38 @@ This project is part of the **C++ Modules** at **42 School**, focusing on object
 git clone https://github.com/your-username/cpp-module-01.git
 cd cpp-module-01
 
-Compile the project:
+```
+## Compile the project:
+```
 
 make
 
-Or, if there is no Makefile:
-
+```
+## Or, if there is no Makefile:
+```
 c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program
 
-Run the program:
-
+```
+## Run the program:
+```
 ./program
 
-Project Structure
+```
+##Usage
+```
 
+Run the compiled program to test different exercises related to C++ memory handling and references.
+42 School Coding Standards
+
+This project follows the strict 42 Norms, meaning:
+
+- No forbidden functions (`malloc` is not allowed in C++ projects).
+- Proper memory management (`new` / `delete`).
+- Adherence to **C++98** standard.
+```
+
+## Project Structure
+```
 📂 cpp-module-01
 ├── 📄 Makefile
 ├── 📂 src
@@ -43,14 +61,3 @@ Project Structure
 │   ├── ExampleClass.hpp
 ├── 📄 README.md
 └── 📄 .gitignore
-
-Usage
-
-Run the compiled program to test different exercises related to C++ memory handling and references.
-42 School Coding Standards
-
-This project follows the strict 42 Norms, meaning:
-
-- No forbidden functions (`malloc` is not allowed in C++ projects).
-- Proper memory management (`new` / `delete`).
-- Adherence to **C++98** standard.
