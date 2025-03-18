@@ -41,9 +41,3 @@ Usage
 
 Run the compiled program to test different exercises related to C++ memory handling and references.
 42 School Coding Standards
-
-This project follows the strict 42 Norms, meaning:
-
-- No forbidden functions (`malloc` is not allowed in C++ projects).
-- Proper memory management (`new` / `delete`).
-- Adherence to **C++98** standard.
