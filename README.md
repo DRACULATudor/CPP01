@@ -12,19 +12,11 @@ This project is part of the **C++ Modules** at **42 School**, focusing on object
     Namespaces
 
 
-## Installation & Compilation
+## Compilation
 
-Clone the repository:
-```bash
-git clone https://github.com/your-username/cpp-module-01.git
-cd cpp-module-01
-
-```
 Compile the project:
 ```
-
 make
-
 ```
 Or, if there is no Makefile:
 ```
