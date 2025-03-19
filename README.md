@@ -29,6 +29,5 @@ c++ -Wall -Wextra -Werror -std=c++98 *.cpp -o program
 ```
 # Usage
 ```
-
 Run the compiled program to test different exercises related to C++ memory handling and references.
 42 School Coding Standards
